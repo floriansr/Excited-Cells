@@ -29,8 +29,8 @@ const convert = (counterArray) => {
   return newArray
 }
 
-const excitedCells = (cells, K) => {  
-  if (K === 0) return console.log(cells)
+const excitedCells = (cells, k) => {  
+  if (k === 0) return console.log(cells)
   else {
     let counterArray = []
 
@@ -38,11 +38,11 @@ const excitedCells = (cells, K) => {
       let counter = checkExcitedNeighbors(cells, i)
       counterArray.push(counter)
     }
-    let NewArray = convert(counterArray)
-    return excitedCells(NewArray, K - 1)
+    let newArray = convert(counterArray)
+    return excitedCells(newArray, k - 1)
   }
 }
 
 const sensitiveCells = [1, 0, 1, 1]
-const KSteps = 2
-excitedCells(sensitiveCells, KSteps)
+const kSteps = 2
+excitedCells(sensitiveCells, kSteps)
